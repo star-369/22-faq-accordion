@@ -1,0 +1,199 @@
+/*Barlow Semi Condensed fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
+/* Andy Bell CSS Reset*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* centering with flexbox*/
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* centering with grid*/
+.grid-center {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  /* or*/
+  /* place-content: center;*/
+}
+
+/* button reset */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-pink: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+  --grayish-purple-v2: hsl(281, 83%, 54%);
+  --work-sans: "Work Sans", sans-serif;
+}
+
+body {
+  background: var(--light-pink);
+  font-family: var(--word-sans);
+}
+body::before {
+  content: " ";
+  background: url("../assets/images/background-pattern-mobile.svg");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 35%;
+  z-index: -1;
+}
+
+.accordion-card {
+  background: var(--white);
+  padding: 1rem;
+  width: 300px;
+  border-radius: 1rem;
+}
+.accordion-card__title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+}
+.accordion-card__title img {
+  height: 30px;
+  aspect-ratio: 1/1.2;
+}
+.accordion-card__content {
+  margin: 0;
+  padding: 0;
+}
+.accordion-card__content li {
+  list-style: none;
+}
+.accordion-card__content li:nth-of-type(1n):not(:nth-last-child(1)) {
+  border-bottom: 0.1px solid var(--light-pink);
+}
+.accordion-card__content li label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--dark-purple);
+  padding-block: 0.5rem;
+}
+.accordion-card__content li label::after {
+  content: url("../assets/images/icon-plus.svg");
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  line-height: 1;
+}
+.accordion-card__content li label:hover {
+  color: var(--grayish-purple-v2);
+}
+.accordion-card__content li input[type=checkbox] {
+  display: none;
+}
+.accordion-card__content__description {
+  color: var(--grayish-purple);
+  font-weight: 400;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s, margin-bottom 0.5s;
+}
+input[type=checkbox]:checked + label + .accordion-card__content__description {
+  max-height: 400px;
+  margin-bottom: 1rem;
+}
+.accordion-card__content input[type=checkbox]:checked + label::after {
+  content: url("../assets/images/icon-minus.svg");
+}
+
+@media (min-width: 768px) {
+  body::before {
+    content: " ";
+    background: url("../assets/images/background-pattern-desktop.svg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 35%;
+    z-index: -1;
+  }
+  .accordion-card {
+    padding: 2rem;
+    width: 500px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
