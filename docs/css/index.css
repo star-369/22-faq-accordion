@@ -102,7 +102,7 @@ select {
 
 body {
   background: var(--light-pink);
-  font-family: var(--word-sans);
+  font-family: var(--work-sans);
 }
 body::before {
   content: " ";
