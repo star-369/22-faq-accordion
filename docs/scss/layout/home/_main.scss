@@ -1,7 +1,7 @@
 @use "../../abstracts/mixins" as *;
 body {
   background: var(--light-pink);
-  font-family: var(--word-sans);
+  font-family: var(--work-sans);
   &::before {
     content: " ";
     background: url("../assets/images/background-pattern-mobile.svg");
